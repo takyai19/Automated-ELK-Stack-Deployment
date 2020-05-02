@@ -4,7 +4,7 @@ The files in this repository were used to configure the network depicted below.
 
 ![ELK_Stack_Network_Diagram.png](Diagrams/ELK_Stack_Network_Diagram.png)
 
-These files and folders have been tested and used to generate a live ELK deployment on Azure. They can be used to either recreate the entire deployment pictured above. Alternatively, select portions of the YAML file may be used to install only certain pieces of it, such as Filebeat.
+These files and folders have been tested and used to generate a live ELK deployment on Azure. They can be used to either recreate the entire deployment pictured above, or select portions of the YAML file may be used to install only certain pieces of it, such as Filebeat.
 
   - main.yml
 
@@ -12,7 +12,7 @@ These files and folders have been tested and used to generate a live ELK deploym
 
 This document contains the following details:
 
-- Description of the Topology
+- [Description of the Topology](#description-of-the-topology)
 
 - Access Policies
 
@@ -63,16 +63,16 @@ A summary of the access policies in place can be found in the table below.
 | ELK Server | No                  | 10.0.0.4              |
 
 
-### Elk Configuration
+### ELK Configuration
 
 Ansible was used to automate configuration of the ELK machine. No configuration was performed manually. This automated provisioning drastically reduces the potential for human error. It can also simply the process of configuring multiple servers identically at once.
 
 The first part of the playbook implements the following tasks:
 
-- install docker
-- install python-pip
-- increase virtual memory of the sever VM
-- download and install docker container sebp/elk
+- Install docker
+- Install python-pip
+- Increase virtual memory of the sever VM
+- Download and install docker container sebp/elk
 
 The following screenshot displays the result of running `sudo docker ps` after successfully configuring the ELK instance.
 
@@ -116,15 +116,15 @@ SSH into the control node and follow the steps below:
 
 - Edit the "remote_user" of the ansible.cfg file to your user name (you can edit by "nano ansible.cfg")
 
-- Copy the hosts file to /etc/ansible, if it's not already there (you can use "cp [path to where you downloaded the file]/hosts /etc/ansible/")
+- Copy the hosts file to /etc/ansible, if it's not already there (you can use `cp [path to where you downloaded the file]/hosts /etc/ansible/`)
 
-- Edit the /etc/ansible/hosts file to include the IP addresses of the webservers and ELK servers in the specified sections (you can edit by "nano /etc/ansible/hosts")
+- Edit the /etc/ansible/hosts file to include the IP addresses of the webservers and ELK servers in the specified sections (you can edit by `nano /etc/ansible/hosts`)
 
-- Copy the 'roles' folder including all subfolders and files to /etc/ansible (you can use "cp -R [path to where you downloaded the folder]/roles /etc/ansible/")
+- Copy the 'roles' folder including all subfolders and files to /etc/ansible (you can use `cp -R [path to where you downloaded the folder]/roles /etc/ansible/`)
 
-- Copy the main.yml playbook file to /etc/ansible (you can use "cp [path to where you saved the playbook file]/main.yml /etc/ansible/")
+- Copy the main.yml playbook file to /etc/ansible (you can use `cp [path to where you saved the playbook file]/main.yml /etc/ansible/`)
 
-- If desired comment out the relevant lines of main.yml for the beat tasks you do not need (e.g. "#  - install-packetbeat")
+- If desired comment out the relevant lines of main.yml for the beat tasks you do not need (e.g. `#  - install-packetbeat`)
 
 - Run the playbook by the command "ansible-playbook main.yml", and navigate to http://[your ELK Server's public IP]:5601 to check that the installation worked as expected
 
