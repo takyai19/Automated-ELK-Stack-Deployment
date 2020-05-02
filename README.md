@@ -112,7 +112,7 @@ In order to use the playbook, you will need to have an Ansible control node alre
 
 SSH into the control node and follow the steps below:
 
-- Copy the ansible.cfg file to /etc/ansible if it's not already there (you can use "cp [path to where you downloaded the file]/ansible.cfg /etc/ansible/")
+- Copy the ansible.cfg file to /etc/ansible, if it's not already there (you can use "cp [path to where you downloaded the file]/ansible.cfg /etc/ansible/")
 
 - Edit the "remote_user" of the ansible.cfg file to your user name (you can edit by "nano ansible.cfg")
 
