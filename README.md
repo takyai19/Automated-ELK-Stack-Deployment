@@ -76,7 +76,7 @@ The first part of the playbook implements the following tasks:
 
 The following screenshot displays the result of running `sudo docker ps` after successfully configuring the ELK instance.
 
-![Diagrams/sudo_docker_ps_output.png](Diagrams/docker_ps_output.png)
+![Diagrams/sudo_docker_ps_output.png](Diagrams/sudo_docker_ps_output.png)
 
 
 ### Target Machines & Beats
