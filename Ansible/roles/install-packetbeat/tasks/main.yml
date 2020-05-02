@@ -1,0 +1,18 @@
+  - name: download deb
+    command: curl -L -O artifacts.elastic.co/downloads/beats/packetbeat/packetbeat-7.6.2-amd64.deb
+ 
+  - name: install deb
+    command: dpkg -i packetbeat-7.6.2-amd64.deb
+
+  - name: drop in configuration file 
+    copy:
+      src: packetbeat.yml
+      dest: /etc/packetbeat/packetbeat.yml
+
+
+  - name: setup
+    command: packetbeat setup
+
+  - name: start service
+    command: service packetbeat start
+

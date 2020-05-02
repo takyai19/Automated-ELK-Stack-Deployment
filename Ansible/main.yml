@@ -1,0 +1,27 @@
+- hosts: elkservers
+  become: true
+  roles:
+   - install-elk
+
+- name: wait for ports 5601/9200/5044 of elkservers to open
+  hosts: elkservers
+  tasks:
+  - wait_for:
+      delay: 60
+      port: 5601
+      state: started
+  - wait_for:
+      port: 9200
+      state: started
+  - wait_for:
+      port: 5044
+      state: started
+
+- hosts: webservers
+  become: true
+  roles:
+  - install-docker
+  - install-filebeat
+  - install-metricbeat
+  - install-packetbeat
+  - install-auditbeat
