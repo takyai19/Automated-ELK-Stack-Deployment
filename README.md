@@ -99,7 +99,7 @@ These Beats allow us to collect the following information from each machine:
 
 - Filebeat monitors the log files or locations on the server as specified, collects log events and forwards them to the ELK Server
 
-- Metricbeat monitors the system-level metrics of the server such as CPU/memory/disk usages, network IO statistics and statistics for all processes running on the system, and forward them to ELK Server
+- Metricbeat monitors the system-level metrics of the server such as CPU/memory/disk usages, network IO statistics and statistics for all processes running on the system, and forward them to the ELK Server
 
 - Packetbeat monitors network traffic and sends the data to the ELK Server, which will enable near real-time searches, analyses and visualization with the tools of Kibana
 
@@ -110,21 +110,21 @@ These Beats allow us to collect the following information from each machine:
 
 In order to use the playbook, you will need to have an Ansible control node already configured. Assuming you have such a control node provisioned: 
 
-- SSH into the control node and follow the steps below:
+SSH into the control node and follow the steps below:
 
-- Copy the ansible.cfg file to /etc/ansible if it's not already there (you can use the command "cp [path to where you saved the folder]/ansible.cfg /etc/ansible/")
+- Copy the ansible.cfg file to /etc/ansible if it's not already there (you can use "cp [path to where you downloaded the file]/ansible.cfg /etc/ansible/")
 
-- Edit the "remote_user" of the ansible.cfg file to your user name (you can edit by the command "nano ansible.cfg")
+- Edit the "remote_user" of the ansible.cfg file to your user name (you can edit by "nano ansible.cfg")
 
-- Copy the hosts file to /etc/ansible, if it's not already there (you can use the command "cp [path to where you saved the folder]/hosts /etc/ansible/")
+- Copy the hosts file to /etc/ansible, if it's not already there (you can use "cp [path to where you downloaded the file]/hosts /etc/ansible/")
 
-- Edit the /etc/ansible/hosts file to include the IP addresses of the webservers and ELK servers in the specified sections (you can edit by the command "nano /etc/ansible/hosts")
+- Edit the /etc/ansible/hosts file to include the IP addresses of the webservers and ELK servers in the specified sections (you can edit by "nano /etc/ansible/hosts")
 
-- Copy the roles folder (including all subfolders and their files) to /etc/ansible (you can use the command "cp -R [path to where you saved the folder]/roles /etc/ansible/")
+- Copy the 'roles' folder including all subfolders and files to /etc/ansible (you can use "cp -R [path to where you downloaded the folder]/roles /etc/ansible/")
 
-- Copy the main.yml playbook file to /etc/ansible (you can use the command "cp [path to where you saved the playbook file]/main.yml /etc/ansible/")
+- Copy the main.yml playbook file to /etc/ansible (you can use "cp [path to where you saved the playbook file]/main.yml /etc/ansible/")
 
-- If desired comment out the lines of main.yml for the beat tasks you do not need (e.g. "#  - install-packetbeat")
+- If desired comment out the relevant lines of main.yml for the beat tasks you do not need (e.g. "#  - install-packetbeat")
 
 - Run the playbook by the command "ansible-playbook main.yml", and navigate to http://[your ELK Server's public IP]:5601 to check that the installation worked as expected
 
