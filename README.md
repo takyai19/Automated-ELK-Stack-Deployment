@@ -29,6 +29,7 @@ This document contains the following details:
 ### Description of the Topology
 
 The main purpose of this network is to expose a load-balanced and monitored instance of DVWA, the D*mn Vulnerable Web Application.
+
 ![DVWA_Setup.png](Images/DVWA_Setup.png)
 
 Load balancing ensures that the application will be highly available, in addition to restricting administrative access to the network.
@@ -137,16 +138,26 @@ SSH into the control node and follow the steps below:
 
 Starting up the ELK Server usually takes about 5 minutes. By navigating to `http://[your ELK Server's public IP]:5601`, you can check if the installation worked as expected.
 
+
 ![ELK_Kibana_Home.png](Images/ELK_Kibana_Home.png)
+
+
 
 Kinaba is a powerful visualization tool. You can configure it to produce a wide range of analyses and reports.
 
-Below are a few example reports you can pull from the ELK Server almost right away:
+Below are some example reports you will be able to pull from the ELK Server almost right away:
+
 
 ![ELK_Filebeat_Syslog_Dashboard.png](Images/ELK_Filebeat_Syslog_Dashboard.png)
 
+
+ 
 ![ELK_SIEM_Overview.png](Images/ELK_SIEM_Overview.png)
 
+
+
 ![ELK_Metricbeat_Docker_Overview.png](Images/ELK_Metricbeat_Docker_Overview.png)
+
+
 
 ![ELK_Metricbeat_System_Overview.png](Images/ELK_Metricbeat_System_Overview.png)
